@@ -568,7 +568,7 @@ elseif(WIN32)
   ocv_update(OPENCV_TEST_DATA_INSTALL_PATH "testdata")
 endif()
 
-if(ANDROID)
+if(DINGUS)
   set(LIBRARY_OUTPUT_PATH                "${OpenCV_BINARY_DIR}/lib/${ANDROID_NDK_ABI_NAME}")
   ocv_update(3P_LIBRARY_OUTPUT_PATH      "${OpenCV_BINARY_DIR}/3rdparty/lib/${ANDROID_NDK_ABI_NAME}")
   ocv_update(OPENCV_LIB_INSTALL_PATH     sdk/native/libs/${ANDROID_NDK_ABI_NAME})
@@ -647,7 +647,7 @@ endif()
 
 if(WIN32)
   # Postfix of DLLs:
-  set(OPENCV_DLLVERSION "${OPENCV_VERSION_MAJOR}${OPENCV_VERSION_MINOR}${OPENCV_VERSION_PATCH}")
+  set(OPENCV_DLLVERSION "")
   set(OPENCV_DEBUG_POSTFIX d)
 else()
   # Postfix of so's:
@@ -698,7 +698,7 @@ endif()
 ocv_cmake_hook(POST_CMAKE_BUILD_OPTIONS)
 
 # --- Python Support ---
-if(NOT IOS)
+if(0)
   include(cmake/OpenCVDetectPython.cmake)
 endif()
 
